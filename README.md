@@ -15,7 +15,7 @@ The text and graphs are roughly from the same distribution of semantics in Wikip
 pip install torchtext
 
 python -c "from torchtext.utils import download_from_url; download_from_url('https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download', root='.')"
-unzip genwiki.py
+unzip genwiki.zip
 ```
 
 ### How to Read GenWiki Data
