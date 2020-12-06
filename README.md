@@ -1,5 +1,5 @@
 
-GenWiki is a large-scale dataset for __knowledge graph-to-text__ (G2T) and __text-to-knowledge graph__ (T2G) conversion. It is introduced in the paper [**"GenWiki: A Dataset of 1.3 Million Content-Sharing Text and Graphs for Unsupervised Graph-to-Text Generation"**](https://www.aclweb.org/anthology/2020.coling-main.217.pdf) by [Zhijing Jin](zhijing-jin.com)*, Qipeng Guo*, [Xipeng Qiu](https://xpqiu.github.io/en.html), and [Zheng Zhang](https://shanghai.nyu.edu/academics/faculty/directory/zheng-zhang) at **COLING 2020**.
+GenWiki is a large-scale dataset for *knowledge graph-to-text* (G2T) and *text-to-knowledge graph* (T2G) conversion. It is introduced in the paper [**"GenWiki: A Dataset of 1.3 Million Content-Sharing Text and Graphs for Unsupervised Graph-to-Text Generation"**](https://www.aclweb.org/anthology/2020.coling-main.217.pdf) by [Zhijing Jin](zhijing-jin.com), Qipeng Guo, [Xipeng Qiu](https://xpqiu.github.io/en.html), and [Zheng Zhang](https://shanghai.nyu.edu/academics/faculty/directory/zheng-zhang) at **COLING 2020**.
 
 ## What does it serve for?
 
@@ -30,31 +30,29 @@ Random example-1:
 
 ```json
 {
-    "text": "is a genus of <ENT_0> or scarab beetles in the superfamily <ENT_1> .",
+    "text": "It has been <ENT_0> the permanent collection of the <ENT_1> <ENT_0> <ENT_2> since <ENT_4> , acquired through the <ENT_3> .",
     "entities": [
-        "Scarabaeidae",
-        "Scarabaeoidea"
+        "in",
+        "Museum of Modern Art",
+        "New York City",
+        "Lillie P. Bliss Bequest",
+        "1941"
     ],
     "graph": [
         [
-            "Onthophagiellus",
-            "family",
-            "Scarabaeoidea"
-        ],
-        [
-            "Onthophagiellus",
-            "family",
-            "Scarabaeidae"
+            "The Starry Night",
+            "city",
+            "New York City"
         ]
     ],
     "id_long": {
-        "wikipage": "Onthophagiellus",
+        "wikipage": "The_Starry_Night",
         "text_paragraph_index": 0,
-        "text_sentence_index_start": 0,
-        "text_sentence_index_end": 1,
-        "graph_set_index": 2
+        "text_sentence_index_start": 2,
+        "text_sentence_index_end": 3,
+        "graph_set_index": 0
     },
-    "id_short": "[\"Onthophagiellus\", 2, [0, 0, 1]]"
+    "id_short": "[\"The_Starry_Night\", 0, [0, 2, 3]]"
 }
 ```
 Random example-2:

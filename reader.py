@@ -2,6 +2,7 @@ class GenWikiReader:
     data_name2folder = {
         'full': 'genwiki/train/full/',
         'fine': 'genwiki/train/fine/',
+        'test': 'genwiki/test/'
     }
     sample_file = data_name2folder['fine'] + 'part_1.json'
     url_data = 'https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download'
@@ -9,7 +10,7 @@ class GenWikiReader:
     def __init__(self):
         pass
 
-    def read(self, data_name='fine'):
+    def read(self, data_name='all'):
         import os
         import json
         from glob import glob
@@ -25,7 +26,8 @@ class GenWikiReader:
         all_data = {}
         for name in data_names:
             folder = self.data_name2folder[name]
-            files = glob(folder + 'part_*.json')
+            tmpl = folder + ('part_' if name in {'fine', 'full'} else '') +'*.json'
+            files = glob(tmpl)
 
             data = []
             for file in files:
@@ -62,17 +64,16 @@ class GenWikiReader:
         import os
 
         if not os.path.isfile(self.sample_file):
-            if not os.path.isfile('genwiki_data.zip'):
+            if not os.path.isfile('genwiki.zip'):
                 from torchtext.utils import download_from_url
-                import pdb;
-                pdb.set_trace()
+                print('[Info] No existing data detected. Start downloading...')
                 download_from_url(self.url_data, root='.')
-            os.system('unzip genwiki_data.zip')
+            os.system('unzip genwiki.zip')
 
 
 if __name__ == '__main__':
     gw = GenWikiReader()
     gw.download()
     gw.read()
-    full_data = gw.read(data_name='full')
-    gw.print_sample()
+    # full_data = gw.read(data_name='full')
+    # gw.print_sample()
