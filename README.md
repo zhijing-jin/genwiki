@@ -1,18 +1,5 @@
-Before using the GenWiki reader, please install the Python 3 dependencies by the following:
-```bash
-echo "# genwiki" >> README.md
-git init
-git add README.md reader.py
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:zhijing-jin/genwiki.git
-git push -u origin main
 
-pip install requirements.txt
-```
-
-
-GenWiki is a large-scale dataset for knowledge graph-to-text (G2T) and text-to-knowledge graph (T2G) conversion. It is introduced in the paper ["GenWiki: A Dataset of 1.3 Million Content-Sharing Text and Graphs for Unsupervised Graph-to-Text Generation"](https://www.aclweb.org/anthology/2020.coling-main.217.pdf) by Zhijing Jin*, Qipeng Guo*, Xipeng Qiu, and Zheng Zhang at **COLING 2020**.
+GenWiki is a large-scale dataset for __knowledge graph-to-text__ (G2T) and __text-to-knowledge graph__ (T2G) conversion. It is introduced in the paper [**"GenWiki: A Dataset of 1.3 Million Content-Sharing Text and Graphs for Unsupervised Graph-to-Text Generation"**](https://www.aclweb.org/anthology/2020.coling-main.217.pdf) by [Zhijing Jin](zhijing-jin.com)*, Qipeng Guo*, [Xipeng Qiu](https://xpqiu.github.io/en.html), and [Zheng Zhang](https://shanghai.nyu.edu/academics/faculty/directory/zheng-zhang) at **COLING 2020**.
 
 ## What does it serve for?
 
