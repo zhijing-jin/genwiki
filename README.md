@@ -11,6 +11,7 @@ GenWiki can be used for unsupervised learning, or be treated as a distant superv
 The text and graphs are roughly from the same distribution of semantics in Wikipedia and DBpedia. For more details, please see our [paper](https://www.aclweb.org/anthology/2020.coling-main.217.pdf).
  
 ### How to Obtain GenWiki Data
+Our dataset is on [this Google Drive](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) (size: 257M). Alternatively, you can run the following command lines to download it to your server.
 ```bash
 pip install torchtext
 
