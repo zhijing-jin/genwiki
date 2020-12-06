@@ -22,7 +22,7 @@ unzip genwiki.zip
 ### How to Read GenWiki Data
 To use the GenWiki reader, run the following
 ```bash
-python reader.py
+python genwiki_reader.py
 ```
 
 
