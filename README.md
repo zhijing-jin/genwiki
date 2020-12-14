@@ -3,7 +3,7 @@ GenWiki is a large-scale dataset for *knowledge graph-to-text* (G2T) and *text-t
 
 ## What does it serve for?
 
-GenWiki can be used for unsupervised learning, or be treated as a distant supervision dataset.
+GenWiki can be used for **unsupervised** learning, or be treated as a **distant supervision** dataset.
 
 - GenWiki-FULL: 1.3 million text, and 1.3 million graphs
 - GenWiki-FINE: 750K text, and 750K graphs
@@ -11,20 +11,30 @@ GenWiki can be used for unsupervised learning, or be treated as a distant superv
 The text and graphs are roughly from the same distribution of semantics in Wikipedia and DBpedia. For more details, please see our [paper](https://www.aclweb.org/anthology/2020.coling-main.217.pdf).
  
 ### How to Obtain GenWiki Data
-Our dataset is on [this Google Drive](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) (size: 257M). Alternatively, you can run the following command lines to download it to your server.
+There are three ways to download the data:
+
+#### Method 1: Command lines
+Alternatively, you can run the following command lines to download the [GenWiki data](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) to your server.
 ```bash
 pip install torchtext
 
 python -c "from torchtext.utils import download_from_url; download_from_url('https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download', root='.')"
 unzip genwiki.zip
 ```
+#### Method 2: Direct download from Google Drive
 
-### How to Read GenWiki Data
+Our dataset is on [this Google Drive](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) (size: ~279M). 
+#### Method 3: Run `genwiki_reader.py`
 To use the GenWiki reader, run the following
 ```bash
 python genwiki_reader.py
 ```
 
+### Using GenWiki
+You can read in the GenWiki data, or check the statistics by running the [`genwiki_reader.py`](genwiki_reader.py) too.
+```bash
+python genwiki_reader.py
+```
 
 ### Sample data
 Random example-1:

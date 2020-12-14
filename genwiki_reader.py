@@ -26,17 +26,19 @@ class GenWikiReader:
         all_data = {}
         for name in data_names:
             folder = self.data_name2folder[name]
-            tmpl = folder + ('part_' if name in {'fine', 'full'} else '') +'*.json'
+            tmpl = folder + (
+                'part_' if name in {'fine', 'full'} else '') + '*.json'
             files = glob(tmpl)
 
             data = []
             for file in files:
                 with open(file) as f:
-                    data += json.load(f)
-
+                    datum = json.load(f)
+                    data.extend(datum)
             all_data[name] = data
-            print('[Info] There are {} samples in the GenWiki-{} dataset'.format(
-                len(all_data[name]), name))
+            print('[Info] There are {} samples in the GenWiki-{} dataset'
+                  .format(len(all_data[name]), name))
+
         if data_name in {'fine', 'full'}:
             return all_data[data_name]
         else:
@@ -50,15 +52,11 @@ class GenWikiReader:
             data = json.load(f)
 
         random.shuffle(data)
-        example = json.dumps(data[:2], indent=4)
         print('[Info] The 1st random example:')
         print(json.dumps(data[0], indent=4))
         print('-----------')
         print('[Info] The 2nd random example:')
         print(json.dumps(data[1], indent=4))
-
-        import pdb;
-        pdb.set_trace()
 
     def download(self):
         import os
@@ -75,5 +73,5 @@ if __name__ == '__main__':
     gw = GenWikiReader()
     gw.download()
     gw.read()
-    # full_data = gw.read(data_name='full')
-    # gw.print_sample()
+    fine_data = gw.read(data_name='fine')
+    gw.print_sample()
