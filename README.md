@@ -14,16 +14,16 @@ The text and graphs are roughly from the same distribution of semantics in Wikip
 There are three ways to download the data:
 
 #### Method 1: Command lines
-Alternatively, you can run the following command lines to download the [GenWiki data](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) to your server.
+Alternatively, you can run the following command lines to download the [GenWiki data](https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp) to your server.
 ```bash
 pip install torchtext
 
-python -c "from torchtext.utils import download_from_url; download_from_url('https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download', root='.')"
+python -c "from torchtext.utils import download_from_url; download_from_url('https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp&export=download', root='.')"
 unzip genwiki.zip
 ```
 #### Method 2: Direct download from Google Drive
 
-Our dataset is on [this Google Drive](https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav) (size: ~279M). 
+Our dataset is on [this Google Drive](https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp) (size: ~279M). 
 #### Method 3: Run `genwiki_reader.py`
 To use the GenWiki reader, run the following
 ```bash
