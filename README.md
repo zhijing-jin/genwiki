@@ -11,24 +11,14 @@ GenWiki can be used for **unsupervised** learning, or be treated as a **distant 
 The text and graphs are roughly from the same distribution of semantics in Wikipedia and DBpedia. For more details, please see our [paper](https://www.aclweb.org/anthology/2020.coling-main.217.pdf).
  
 ### How to Obtain GenWiki Data
-There are three ways to download the data:
 
-#### Method 1: Command lines
-Alternatively, you can run the following command lines to download the [GenWiki data](https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp) to your server.
-```bash
-pip install torchtext
+Our dataset is genwiki.zip (size: ~279M). 
 
-python -c "from torchtext.utils import download_from_url; download_from_url('https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp&export=download', root='.')"
-unzip genwiki.zip
-```
-#### Method 2: Direct download from Google Drive
+- You can download it from the [Edmond web interface](https://edmond.mpg.de/dataset.xhtml?persistentId=doi%3A10.17617%2F3.YGO7EW#).
 
-Our dataset is on [this Google Drive](https://drive.google.com/uc?id=1zGyjKHCYJBkM7EtF9halhI2wuggaxLMp) (size: ~279M). 
-#### Method 3: Run `genwiki_reader.py`
-To use the GenWiki reader, run the following
-```bash
-python genwiki_reader.py
-```
+- Or, in command line, you can directly issue a GET command of this [file link](https://dev-edmond-objstor-hdd.s3.gwdg.de/10.17617/3.YGO7EW/18cc9ead959-90ea6ac85afa?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27genwiki.zip&response-content-type=application%2Fzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240102T135301Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=W7RIGMB4SLQMPMLDY4FF%2F20240102%2Fdataverse%2Fs3%2Faws4_request&X-Amz-Signature=10bc53e39162d5ecede6dfb027e0515a010d3949d17ffe3557a018ee8b9482db). (In case of any changes of the file link, you can obtain a new one by inspecting the "Network" tab of the code inspector of your browser when downloading the zip file from the web interface.)
+
+- Or, the download script has also been incorporated into the `python genwiki_reader.py` code.
 
 ### Using GenWiki
 You can read in the GenWiki data, or check the statistics by running the [`genwiki_reader.py`](genwiki_reader.py) too.
