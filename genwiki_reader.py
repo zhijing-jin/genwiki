@@ -5,7 +5,8 @@ class GenWikiReader:
         'test': 'genwiki/test/'
     }
     sample_file = data_name2folder['fine'] + 'part_1.json'
-    url_data = 'https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download'
+    url_data = 'https://drive.google.com/uc?id=19IRK07e7RTKGUqTyNTEigECWAMIMgFav&export=download' # old link
+    url_data = "https://dev-edmond-objstor-hdd.s3.gwdg.de/10.17617/3.YGO7EW/18cc9ead959-90ea6ac85afa?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27genwiki.zip&response-content-type=application%2Fzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240102T135301Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=W7RIGMB4SLQMPMLDY4FF%2F20240102%2Fdataverse%2Fs3%2Faws4_request&X-Amz-Signature=10bc53e39162d5ecede6dfb027e0515a010d3949d17ffe3557a018ee8b9482db"
 
     def __init__(self):
         pass
@@ -65,7 +66,7 @@ class GenWikiReader:
             if not os.path.isfile('genwiki.zip'):
                 from torchtext.utils import download_from_url
                 print('[Info] No existing data detected. Start downloading...')
-                download_from_url(self.url_data, root='.')
+                download_from_url(self.url_data, path='./genwiki.zip')
             os.system('unzip genwiki.zip')
 
 
